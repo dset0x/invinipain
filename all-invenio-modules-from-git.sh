@@ -22,7 +22,7 @@ while read thing; do
     pip uninstall -y "$thing"
     pip install -e ./"$thing"
 
-    find "$thing" -type f -name '*.py' -print0 | xargs -0 sed -i 's/invenio.modules.upgrader/invenio_upgrader/g'
+    #find "$thing" -type f -name '*.py' -print0 | xargs -0 sed -i 's/invenio.modules.upgrader/invenio_upgrader/g'
 done < <(pip freeze 2>/dev/null | grep -P 'invenio-.+==' | cut -d'=' -f1)
 
 find "$VIRTUAL_ENV" -name '*.pyc' -delete
