@@ -16,7 +16,7 @@ while read thing; do
     if [ ! -d "$thing" ]; then
         git clone git@github.com:inveniosoftware/"$thing".git
     else
-        (cd "$thing" && git fetch)
+        (cd "$thing" && git pull)
     fi
 
     pip uninstall -y "$thing"
