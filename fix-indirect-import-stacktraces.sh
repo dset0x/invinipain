@@ -15,6 +15,5 @@ fi
 
 cd "$VIRTUAL_ENV/src"
 
-pip uninstall -y werkzeug flask-registry
 pip install 'git+https://github.com/dset0x/werkzeug.git@import_stacktrace'
 pip install 'git+https://github.com/dset0x/flask-registry.git@implicit_broken_module_import'
